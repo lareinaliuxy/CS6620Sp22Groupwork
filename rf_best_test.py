@@ -1,6 +1,6 @@
 """
 To run this app, in your terminal:
-> streamlit run streamlit_demo.py
+> streamlit run rf_best_test.py
 Source: https://is.gd/SobJvL
 """
 
@@ -10,7 +10,7 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 from PIL import Image
 
-clf = joblib.load('./joblib/rf-best-prediction-model.joblib')
+clf = joblib.load('./rf-best-prediction-model.joblib')
 
 # Create title and sidebar
 st.title("Disease Prediction App")
@@ -26,7 +26,7 @@ MentalHealth_std = 7.955235
 SleepTime_mean = 7.097075
 SleepTime_std = 1.436007
 
-correlation = Image.open('./joblib/correlation.png')
+correlation = Image.open('./correlation.png')
 
 parameter_list = ['BMI', 'PhysicalHealth', 'MentalHealth', 'SleepTime', 'Smoking_No', 'Smoking_Yes', 'AlcoholDrinking_No', 'AlcoholDrinking_Yes', 'Stroke_No', 'Stroke_Yes', 'DiffWalking_No', 'DiffWalking_Yes', 'Sex_Female', 'Sex_Male', 'AgeCategory_18-24', 'AgeCategory_25-29', 'AgeCategory_30-34', 'AgeCategory_35-39', 'AgeCategory_40-44', 'AgeCategory_45-49', 'AgeCategory_50-54', 'AgeCategory_55-59', 'AgeCategory_60-64', 'AgeCategory_65-69', 'AgeCategory_70-74', 'AgeCategory_75-79',
                   'AgeCategory_80 or older', 'Race_American Indian/Alaskan Native', 'Race_Asian', 'Race_Black', 'Race_Hispanic', 'Race_Other', 'Race_White', 'Diabetic_No', 'Diabetic_No, borderline diabetes', 'Diabetic_Yes', 'Diabetic_Yes (during pregnancy)', 'PhysicalActivity_No', 'PhysicalActivity_Yes', 'GenHealth_Excellent', 'GenHealth_Fair', 'GenHealth_Good', 'GenHealth_Poor', 'GenHealth_Very good', 'Asthma_No', 'Asthma_Yes', 'KidneyDisease_No', 'KidneyDisease_Yes', 'SkinCancer_No', 'SkinCancer_Yes']
